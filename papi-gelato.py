@@ -1,6 +1,6 @@
 print("Welkom bij Papi Gelato.")
 error = "Sorry, dat snap ik niet..."
-bolletjes = int(input("Hoeveel bolletjes wilt u?"))
+klant = False
 keuze = ""
 hoorntje = False
 bakje = False
@@ -9,6 +9,33 @@ hoorntjeHoeveelheid = 0
 bakjeHoeveelheid = 0
 bolletjesHoeveelheid = 0
 toppingsTotaal = 0
+
+def klant():
+    global klant
+    vraag = input("Bent u 1) particulier of 2) zakelijk?")
+    if vraag == "1":
+        klant = True
+    elif vraag == "2":
+        klant = False
+    else:
+        print(error)
+        klant()
+
+def Smaakzakelijk():
+    for x in range(1,liter+1):
+        smaak = input("Welke smaak wilt u voor liter nummer {}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?".format(x)).lower()
+        if smaak == "a":
+            print("Liter {} is aardbei".format(x))
+        elif smaak == "c":
+            print("Liter {} is chocolade".format(x))
+        elif smaak == "m":
+            print("Liter {} is mint".format(x))
+        elif smaak == "v":
+            print("Liter {} is vanilla".format(x))
+        else:
+            print(error)
+            Smaakzakelijk()
+    bon()
 
 def Smaak():
     global bolletjes
@@ -95,10 +122,16 @@ def Stap3():
 def bon():
     global toppingsTotaal
     print('---------["Papi Gelato"]---------')
-    bolletjesTotaal = bolletjesHoeveelheid * 1.10
-    bolletjesTotaal = "{:.2f}".format(bolletjesTotaal)
-    Totaal=+float(bolletjesTotaal)
-    print('Bolletjes       {} x €1.10 = €{}'.format(bolletjesHoeveelheid,bolletjesTotaal))
+    if klant == True:
+        bolletjesTotaal = bolletjesHoeveelheid * 1.10
+        bolletjesTotaal = "{:.2f}".format(bolletjesTotaal)
+        Totaal=+float(bolletjesTotaal)
+        print('Bolletjes       {} x €1.10 = €{}'.format(bolletjesHoeveelheid,bolletjesTotaal))
+    if klant == False:
+        literTotaal = liter * 9.8
+        Totaal=+literTotaal
+        literTotaal = "{:.2f}".format(literTotaal)
+        print('Liter           {} x €9.80 = €{}'.format(liter,literTotaal))
     if hoorntje == True:
         hoorntjeTotaal = hoorntjeHoeveelheid * 1.25
         Totaal=+hoorntjeTotaal
@@ -112,6 +145,19 @@ def bon():
         Totaal=+toppingsTotaal
         print('Topping         1 x €{} = €{}'.format(toppingsTotaal,toppingsTotaal))
     print('                          -------- +')
+    Totaal = "{:.2f}".format(Totaal)
     print('Totaal                    = €{}'.format(Totaal))
+    if klant == False:
+        btw = Totaal * 0.09
+        btw = "{:.2f}".format(btw)
+        print('BTW (9%)                  = €{}'.format(btw))
 
-Smaak()
+klant()
+
+if klant == True:
+    bolletjes = int(input("Hoeveel bolletjes wilt u?"))
+    Smaak()
+
+if klant == False:
+    liter = int(input("Hoeveel liter ijs wilt u bestellen?"))
+    Smaakzakelijk()
