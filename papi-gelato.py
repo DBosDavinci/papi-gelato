@@ -148,7 +148,7 @@ def bon():
     Totaal = "{:.2f}".format(Totaal)
     print('Totaal                    = €{}'.format(Totaal))
     if klant == False:
-        btw = Totaal * 0.09
+        btw = float(Totaal) * 0.09
         btw = "{:.2f}".format(btw)
         print('BTW (9%)                  = €{}'.format(btw))
 
