@@ -1,4 +1,4 @@
-print("Welkom bij Papi Gelato je mag alle smaken ijs kiezen zolang het maar vanille ijs is.")
+print("Welkom bij Papi Gelato")
 
 meer = "Hier is uw {} met {} bolletje(s). Wilt u nog meer bestellen? (Y/N)"
 error = "Sorry dat snap ik niet..."
