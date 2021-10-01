@@ -23,7 +23,7 @@ def klant():
 
 def Smaakzakelijk():
     for x in range(1,liter+1):
-        smaak = input("Welke smaak wilt u voor liter nummer {}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?".format(x)).lower()
+        smaak = input("Welke smaak wilt u voor liter nummer {}? A) Aardbei, C) Chocolade of V) Vanille?".format(x)).lower()
         if smaak == "a":
             print("Liter {} is aardbei".format(x))
         elif smaak == "c":
@@ -120,25 +120,25 @@ def bon():
     print('---------["Papi Gelato"]---------')
     if klant == True:
         bolletjesTotaal = bolletjesHoeveelheid * 0.95
+        Totaal = bolletjesTotaal
         bolletjesTotaal = "{:.2f}".format(bolletjesTotaal)
-        Totaal=+float(bolletjesTotaal)
         print('Bolletjes       {} x €0.95 = €{}'.format(bolletjesHoeveelheid,bolletjesTotaal))
     if klant == False:
         literTotaal = liter * 9.8
-        Totaal=+literTotaal
+        Totaal = literTotaal
         literTotaal = "{:.2f}".format(literTotaal)
         print('Liter           {} x €9.80 = €{}'.format(liter,literTotaal))
     if hoorntje == True:
         hoorntjeTotaal = hoorntjeHoeveelheid * 1.25
-        Totaal=+hoorntjeTotaal
+        Totaal = Totaal + hoorntjeTotaal
         print('Hoorntje        {} x €1.25 = €{}'.format(hoorntjeHoeveelheid,hoorntjeTotaal))
     if bakje == True:
         bakjeTotaal = bakjeHoeveelheid * 0.75
-        Totaal=+bakjeTotaal
+        Totaal = Totaal + bakjeTotaal
         print('Bakje           {} x €0.75 = €{}'.format(bakjeHoeveelheid,bakjeTotaal))
     if topping == True:
+        Totaal = Totaal + toppingsTotaal
         toppingsTotaal = "{:.2f}".format(toppingsTotaal)
-        Totaal=+toppingsTotaal
         print('Topping         1 x €{} = €{}'.format(toppingsTotaal,toppingsTotaal))
     print('                          -------- +')
     Totaal = "{:.2f}".format(Totaal)
@@ -147,6 +147,7 @@ def bon():
         btw = float(Totaal) * 0.06
         btw = "{:.2f}".format(btw)
         print('BTW (6%)                  = €{}'.format(btw))
+    quit()
 
 klant()
 
