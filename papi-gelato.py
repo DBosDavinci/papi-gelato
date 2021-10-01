@@ -123,10 +123,10 @@ def bon():
     global toppingsTotaal
     print('---------["Papi Gelato"]---------')
     if klant == True:
-        bolletjesTotaal = bolletjesHoeveelheid * 1.10
+        bolletjesTotaal = bolletjesHoeveelheid * 0.95
         bolletjesTotaal = "{:.2f}".format(bolletjesTotaal)
         Totaal=+float(bolletjesTotaal)
-        print('Bolletjes       {} x €1.10 = €{}'.format(bolletjesHoeveelheid,bolletjesTotaal))
+        print('Bolletjes       {} x €0.95 = €{}'.format(bolletjesHoeveelheid,bolletjesTotaal))
     if klant == False:
         literTotaal = liter * 9.8
         Totaal=+literTotaal
