@@ -28,8 +28,6 @@ def Smaakzakelijk():
             print("Liter {} is aardbei".format(x))
         elif smaak == "c":
             print("Liter {} is chocolade".format(x))
-        elif smaak == "m":
-            print("Liter {} is mint".format(x))
         elif smaak == "v":
             print("Liter {} is vanilla".format(x))
         else:
@@ -45,7 +43,7 @@ def Smaak():
             print("Bolletje {} is aardbei".format(x))
         elif smaak == "c":
             print("Bolletje {} is chocolade".format(x))
-        elif smaak == "m":
+        elif smaak == "v":
             print("Bolletje {} is vanilla".format(x))
         else:
             print(error)
