@@ -40,14 +40,12 @@ def Smaakzakelijk():
 def Smaak():
     global bolletjes
     for x in range(1,bolletjes+1):
-        smaak = input("Welke smaak wilt u voor bolletje nummer {}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?".format(x)).lower()
+        smaak = input("Welke smaak wilt u voor bolletje nummer {}? A) Aardbei, C) Chocolade of V) Vanille?".format(x)).lower()
         if smaak == "a":
             print("Bolletje {} is aardbei".format(x))
         elif smaak == "c":
             print("Bolletje {} is chocolade".format(x))
         elif smaak == "m":
-            print("Bolletje {} is mint".format(x))
-        elif smaak == "v":
             print("Bolletje {} is vanilla".format(x))
         else:
             print(error)
