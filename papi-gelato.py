@@ -1,5 +1,5 @@
 print("Welkom bij Papi Gelato.")
-error = "Sorry, dat snap ik niet..."
+error = "Sorry dat is geen optie die we aanbieden..."
 klant = False
 keuze = ""
 hoorntje = False
